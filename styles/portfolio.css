@@ -88,4 +88,26 @@ font-weight: 700;
 text-align: center;
 font-size: 18px;
 font-weight: 400;
+margin-bottom: 50px;
+}
+/*main section*/
+main{
+    max-width: 1140px;
+    margin:0 auto;
+}
+.aboutinfo-container{
+    display: flex;
+    justify-content: space-around;
+}
+.aboutinfo{
+    text-align: center;
+}
+.info-title{
+    color: #757575;
+}
+#what-i-do-description{
+    padding: 30px 150px;
+}
+.skill{
+    display: flex;
 }
