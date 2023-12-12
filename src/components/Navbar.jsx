@@ -5,15 +5,15 @@ import { useEffect, useState } from 'react';
 const links = <>
   <NavLink to="/" className={({ isActive, isPending }) =>
     isPending ? "pending" : isActive ?
-      "text-[#e1a5c8] font-bold underline" : ""
+      "text-[#dd9441] font-bold underline" : ""
   }>Home</NavLink>
   <NavLink to="/projects" className={({ isActive, isPending }) =>
     isPending ? "pending" : isActive ?
-      "text-[#f6badd] font-bold underline" : ""
+      "text-[#eba14c] font-bold underline" : ""
   }>Projects</NavLink>
   <NavLink to="/contact" className={({ isActive, isPending }) =>
     isPending ? "pending" : isActive ?
-      "text-[#f0a6a6] font-bold underline" : ""
+      "text-[#e5a153] font-bold underline" : ""
   }>Contact</NavLink>
 
 </>
@@ -47,8 +47,8 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <a className="btn btn-ghost normal-case  md:visible text-red-900  text-4xl font-bold">
-            <img className='w-44' src="https://i.ibb.co/bWjGsVY/GSlogo-removebg-preview.png" alt="icon1" border="0" /></a>
+          <a className="btn btn-ghost normal-case invisible  md:visible text-red-900  text-4xl font-bold">
+            <img className='w-12' src="https://i.ibb.co/5nPH0Qm/letter-j-9871830.png" alt="icon1" border="0" />JK | Nadira</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal gap-4 px-1">

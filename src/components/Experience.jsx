@@ -27,7 +27,7 @@ const Experience = () => {
           </div>
           <div className="timeline-start md:text-end mb-10">
             <time className="font-mono italic">2023</time>
-            <div className="text-lg font-black">Web Development Course</div>
+            <div className="text-xl font-medium">Web Development Course</div>
             Programming Hero | Certificate of Completion
             <li className="w-72">
               <ul>

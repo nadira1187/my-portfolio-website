@@ -11,7 +11,7 @@ const Education = () => {
           </div>
           <div className="timeline-start md:text-end mb-10">
             <time className="font-mono italic">2022</time>
-            <div className="text-lg font-black">BSc in Software Engineering</div>
+            <div className="text-lg font-medium">BSc in Software Engineering</div>
            Daffodil International University | Running
             <li className="w-72">
             I am currently pursuing a BSc in Software Engineering, a comprehensive and forward-looking program that equips me with the skills and knowledge essential for the dynamic field of software development. Through a rigorous curriculum and hands-on projects, I am gaining expertise in various areas of software engineering, including programming languages, algorithms, software design, and system architecture. 

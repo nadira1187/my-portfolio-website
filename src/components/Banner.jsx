@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import gif from "../assets/animation.gif";  // Import the GIF correctly
-const pdfFile="http://localhost:5173/Resume.pdf"
+const pdfFile="https://my-portfolio-chi-teal-83.vercel.app/Resume.pdf"
 const Banner = () => {
   const downloadFileUrl = (url) => {
     const fileName = url.split("/").pop();
@@ -53,8 +53,8 @@ const Banner = () => {
                 </motion.span>
               ))}
             </motion.div>
-            <p>Crafting Digital Experiences: Transforming Ideas into Innovative Web Solutions. Passionate about Frontend Development, UI/UX Design, and Creating Seamless User Journeys</p>
-            <button onClick={()=>{downloadFileUrl(pdfFile)}} className="mt-5 btn btn-primary bg-pink-400  border-white text-white">Download Resume</button>
+            <p>Crafting Digital Experiences: Transforming Ideas into Innovative Web Solutions. Passionate about Frontend Development, UI/UX Design, and Creating Seamless User Journeys.</p>
+            <button onClick={()=>{downloadFileUrl(pdfFile)}} className="mt-5 btn btn-primary bg-orange-400  border-white text-white">Download Resume</button>
             </div>
            
             <img

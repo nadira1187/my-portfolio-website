@@ -40,7 +40,7 @@ const Contact = () => {
                 <div className="card w-96 glass shadow-xl">
                     <div className="card-body">
                         <h2 className="card-title"><FaLinkedin />LinkedIn</h2>
-                        <p>+8801953796281</p>
+                        <a href="https://www.linkedin.com/in/nadira-ohi1187/">nadira-ohi1187</a>
 
                     </div>
                 </div></div>
@@ -58,7 +58,7 @@ const Contact = () => {
                         <input type="textbox" name="message" placeholder="Write Message..." className="input input-bordered w-full" />
 
                         <div className="form-control mt-4">
-                            <input type="submit" className="btn btn-primary bg-pink-400 border-fuchsia-500 text-white" value="Send" />
+                            <input type="submit" className="btn btn-primary bg-orange-400 border-white text-white" value="Send" />
 
                         </div>
                     </form>
