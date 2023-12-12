@@ -1,11 +1,10 @@
-import Footer from "./Footer";
-import Navbar from "./Navbar";
+
 
 const Projects = () => {
     return (
         <div className="overflow-x-hidden">
-            <Navbar></Navbar>
-            <h2 className="text-5xl text-center font-bold mt-8">Projects</h2>
+            
+            <h2 className="text-5xl text-center font-bold ">Projects</h2>
             <p className="text-lg text-center my-4"> Projects I build as a developer</p>
            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
            <div className="card w-96 glass">
@@ -46,7 +45,7 @@ Deliver a visually captivating user interface for hotel room bookings,enhancing 
                 </div>
             </div>
            </div>
-           <Footer></Footer>
+         
         </div>
     );
 };

@@ -2,7 +2,7 @@
 const Experience = () => {
   return (
     <div>
-      <h2 className="text-3xl md:text-5xl font-bold text-center mt-5">Work Experience</h2>
+      <h2 className="text-3xl md:text-5xl font-bold text-center mt-5"> Experience</h2>
       <ul className="mt-5 timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
         <li>
           <div className="timeline-middle ">
