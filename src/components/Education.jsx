@@ -2,7 +2,7 @@
 const Education = () => {
     return (
         <div>
-            <h2 className="text-5xl font-bold text-center mt-5">Education</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-center mt-5">Education</h2>
             <ul className="mt-5 timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
         <li>
           <div className="timeline-middle ">
@@ -13,7 +13,7 @@ const Education = () => {
             <time className="font-mono italic">2022</time>
             <div className="text-lg font-black">BSc in Software Engineering</div>
            Daffodil International University | Running
-            <li>
+            <li className="w-72">
             I am currently pursuing a BSc in Software Engineering, a comprehensive and forward-looking program that equips me with the skills and knowledge essential for the dynamic field of software development. Through a rigorous curriculum and hands-on projects, I am gaining expertise in various areas of software engineering, including programming languages, algorithms, software design, and system architecture. 
             </li>
 
@@ -27,9 +27,9 @@ const Education = () => {
           </div>
           <div className="timeline-end mb-10">
             <time className="font-mono italic">2018-2020</time>
-            <div className="text-xl font-medium ">Higher Secondary School Certificate</div>
+            <div className="text-lg font-medium ">Higher Secondary School Certificate</div>
             Cumilla Govt. Womens College | GPA 5
-            <p>During my Higher Secondary School Certificate (HSC) years, I embarked on an academic journey that laid the foundation for my future endeavors. These formative years not only provided me with a strong educational base but also cultivated essential skills in time management, teamwork, and critical thinking. </p>
+            <p className="w-72">During my Higher Secondary School Certificate (HSC) years, I embarked on an academic journey that laid the foundation for my future endeavors. These formative years not only provided me with a strong educational base but also cultivated essential skills in time management, teamwork, and critical thinking. </p>
           </div>
          
           <hr />

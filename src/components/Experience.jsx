@@ -2,7 +2,7 @@
 const Experience = () => {
   return (
     <div>
-      <h2 className="text-5xl font-bold text-center mt-5">Work Experience</h2>
+      <h2 className="text-3xl md:text-5xl font-bold text-center mt-5">Work Experience</h2>
       <ul className="mt-5 timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
         <li>
           <div className="timeline-middle ">
@@ -29,7 +29,7 @@ const Experience = () => {
             <time className="font-mono italic">2023</time>
             <div className="text-lg font-black">Web Development Course</div>
             Programming Hero | Certificate of Completion
-            <li>
+            <li className="w-72">
               <ul>
                 Completed the comprehensive Complete Web Development course on Programming Hero.
               </ul>
@@ -49,7 +49,10 @@ const Experience = () => {
           <div className="timeline-end mb-10">
             <time className="font-mono italic">2022</time>
             <div className="text-xl font-medium ">5th DIU SWE Intra Department Programming Contest</div>
+            <p className="w-72">
             Secured victory in the 5th DIU SWE Intra Department Programming Contest 2022, showcasing exceptional programming skills and problem-solving prowess.
+            </p>
+            
           </div>
           <hr />
         </li>

@@ -1,7 +1,22 @@
 import { motion } from "framer-motion";
 import gif from "../assets/animation.gif";  // Import the GIF correctly
-
+const pdfFile="http://localhost:5173/Resume.pdf"
 const Banner = () => {
+  const downloadFileUrl = (url) => {
+    const fileName = url.split("/").pop();
+    const aTag = document.createElement("a");
+    aTag.href = url;
+    aTag.setAttribute("download", fileName);
+  
+    aTag.addEventListener('error', (error) => {
+      console.error('Error loading PDF file:', error);
+    });
+  
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
+  };
+  
   const text = "I'm Nadira | Web Developer Extraordinaire";
 
   const textArray = text.split(" ");
@@ -32,14 +47,14 @@ const Banner = () => {
                 <motion.span
                   key={index}
                   variants={textItemVariants}
-                  className="text-4xl font-bold"
+                  className="text-3xl md:text-4xl font-bold"
                 >
                   {word}{" "}
                 </motion.span>
               ))}
             </motion.div>
             <p>Crafting Digital Experiences: Transforming Ideas into Innovative Web Solutions. Passionate about Frontend Development, UI/UX Design, and Creating Seamless User Journeys</p>
-            <button className="mt-5 btn btn-primary bg-pink-400  border-white text-white">Download Resume</button>
+            <button onClick={()=>{downloadFileUrl(pdfFile)}} className="mt-5 btn btn-primary bg-pink-400  border-white text-white">Download Resume</button>
             </div>
            
             <img

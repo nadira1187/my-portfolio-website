@@ -2,13 +2,13 @@ import Navbar from "./Navbar";
 
 const Projects = () => {
     return (
-        <div>
+        <div className="overflow-x-hidden">
             <Navbar></Navbar>
             <h2 className="text-5xl text-center font-bold mt-8">Projects</h2>
             <p className="text-lg text-center my-4"> Projects I am in as a developer</p>
            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
            <div className="card w-96 glass">
-                <figure><img className="w-96" src="https://i.ibb.co/G5KZNgn/p1.jpg" alt="car!" /></figure>
+                <figure><img className="w-96" src="https://i.ibb.co/rGgxbZK/screencapture-lush-beauty-client-web-app-2023-12-12-12-15-18.png" alt="car!" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">Lush Beauty</h2>
 
@@ -20,7 +20,7 @@ const Projects = () => {
                 </div>
             </div>
             <div className="card w-96 glass">
-                <figure><img className="w-96" src="https://i.ibb.co/M7dKzqH/p2.jpg" alt="car!" /></figure>
+                <figure><img className="w-96" src="https://i.ibb.co/Yb0kmVK/screencapture-hapless-approval-surge-sh-2023-12-12-12-20-22.png" alt="car!" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">Stay zayn</h2>
 
@@ -33,7 +33,7 @@ Deliver a visually captivating user interface for hotel room bookings,enhancing 
                 </div>
             </div>
             <div className="card w-96 glass">
-                <figure><img className="w-96" src="https://i.ibb.co/5RJ8Ty9/p3.jpg" alt="car!" /></figure>
+                <figure><img className="w-96" src="https://i.ibb.co/JBnkY0v/screencapture-byte-blitz-client-web-app-2023-12-12-12-21-22.png" alt="car!" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">Lush Beauty</h2>
 
