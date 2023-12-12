@@ -19,10 +19,10 @@ const Contact = () => {
             });
     };
     return (
-        <div>
+        <div className="overflow-x-hidden">
             
             <div className="mt-4 bg-amber-200 bg-opacity-10">
-            <h2 className=" pt-3 pb-2 text-center text-3xl font-bold">Contact Us</h2>
+            <h2 className=" pt-3 pb-2 text-center text-3xl font-bold">Contact</h2>
             <p className="text-center text-lg">Contact me for any query</p>
             <div className=" ml-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mt-5" >             
                    <div className="card w-96 glass shadow-xl">
