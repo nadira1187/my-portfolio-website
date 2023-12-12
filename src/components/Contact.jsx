@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { FaEnvelope, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
 
 import emailjs from '@emailjs/browser';
+import swal from "sweetalert";
 
 const Contact = () => {
     const form = useRef();
@@ -12,6 +13,7 @@ const Contact = () => {
         emailjs.sendForm('service_wn1g0hi', 'template_hdtpb6p', form.current, 'DKxtEHpnRG8yEqq-F')
             .then((result) => {
                 console.log(result.text);
+                swal("Your message sent successfully.")
             }, (error) => {
                 console.log(error.text);
             });
