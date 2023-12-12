@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import Navbar from "./Navbar";
 
 const Projects = () => {
@@ -6,7 +7,7 @@ const Projects = () => {
             <Navbar></Navbar>
             <h2 className="text-5xl text-center font-bold mt-8">Projects</h2>
             <p className="text-lg text-center my-4"> Projects I am in as a developer</p>
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
            <div className="card w-96 glass">
                 <figure><img className="w-96" src="https://i.ibb.co/rGgxbZK/screencapture-lush-beauty-client-web-app-2023-12-12-12-15-18.png" alt="car!" /></figure>
                 <div className="card-body">
@@ -45,6 +46,7 @@ Deliver a visually captivating user interface for hotel room bookings,enhancing 
                 </div>
             </div>
            </div>
+           <Footer></Footer>
         </div>
     );
 };
