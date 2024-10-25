@@ -48,7 +48,7 @@ const Contact = () => {
                 </div></div>
             <div className="flex flex-col lg:flex-row justify-center items-center">
 
-                <div className=" ml-5 ">
+                <div className="w-2/3 md:w-full  ml-5 ">
 
                     <img src="https://i.ibb.co/YDC2Yfj/undraw-Contact-us-re-4qqt.png" className="rounded-xl mt-5" alt="" />
 

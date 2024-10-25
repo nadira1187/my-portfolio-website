@@ -35,7 +35,7 @@ const Navbar = () => {
   },
     [theme]);
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       <div className="navbar  max-w-screen-xl bg-base-100 mt-5 ">
         <div className="navbar-start">
           
