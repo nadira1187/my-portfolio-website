@@ -57,7 +57,7 @@ const Banner = () => {
             <button onClick={()=>{downloadFileUrl(pdfFile)}} className="mt-5 btn btn-primary bg-orange-400  border-white text-white">Download Resume</button>
             </div>
            
-            <img
+            <img 
               // Fix the style here
               style={{ backgroundImage: `url(${gif})`, backgroundRepeat: 'no-repeat', marginTop: "20px" }}
               src="https://i.ibb.co/dkn7zTC/Dark-Blue-Modern-Geometric-Simple-Feature-Section-Website-UI-Prototype-removebg-preview.png"
