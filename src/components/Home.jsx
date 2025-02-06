@@ -1,18 +1,18 @@
 import Banner from "./Banner";
 import Contact from "./Contact";
-import Education from "./Education";
+// import Education from "./Education";
 import Experience from "./Experience";
 import Skills from "./Skills";
 
 
 const Home = () => {
     return (
-        <div className="overflow-hidden">
+        <div >
            
               <Banner></Banner>
               <Skills></Skills>
               <Experience></Experience>
-              <Education></Education>
+              {/* <Education></Education> */}
               <Contact></Contact>
               
          </div>

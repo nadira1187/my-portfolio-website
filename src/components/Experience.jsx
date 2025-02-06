@@ -2,7 +2,7 @@
 const Experience = () => {
   return (
     <div>
-      <h2 className="text-3xl md:text-5xl font-bold text-center mt-5"> Experience</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-center mt-5 mb-5 text-blue-950"> Experience</h2>
       <ul className="mt-5 timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
         <li>
           <div className="timeline-middle ">
@@ -25,18 +25,17 @@ const Experience = () => {
               <path className="bg-pink-500" fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
             </svg>
           </div>
-          <div className="timeline-start md:text-end mb-10">
-            <time className="font-mono italic">2023</time>
-            <div className="text-xl font-medium">Web Development Course</div>
-            Programming Hero | Certificate of Completion
-            <li className="w-72">
+          <div className="timeline-start md:text-end mb-10 w-80 bg-slate-200 rounded-md hover:bg-blue-900 hover:text-white">
+            <div className="p-5">
+            <time className="font-mono italic">2024-2025</time>
+            <div className="text-xl font-medium">Next.js Intership</div>
+           Edupy Academy
+            <li className="">
               <ul>
-                Completed the comprehensive Complete Web Development course on Programming Hero.
-              </ul>
-              <ul>
-                Acquired hands-on experience with cutting-edge technologies, including React.js, MongoDB, Express.js, and Tailwind CSS.
+              Developed and maintained scalable full-stack applications using Next.js, Node.js, and Express.js with TypeScript.Implemented server-side rendering (SSR) and API routes in Next.js for improved performance and SEO.
               </ul>
             </li>
+            </div>
 
           </div>
           <hr />
@@ -46,13 +45,20 @@ const Experience = () => {
           <div className="timeline-middle">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
           </div>
-          <div className="timeline-end mb-10">
-            <time className="font-mono italic">2022</time>
-            <div className="text-xl font-medium ">5th DIU SWE Intra Department Programming Contest</div>
-            <p className="w-72">
-            Secured victory in the 5th DIU SWE Intra Department Programming Contest 2022, showcasing exceptional programming skills and problem-solving prowess.
-            </p>
-            
+          <div className="timeline-end mb-10 w-80 bg-slate-200 rounded-md hover:bg-blue-900 hover:text-white">
+          <div className="p-5">
+            <time className="font-mono italic">2023</time>
+            <div className="text-xl font-medium">Web Development Course</div>
+            Programming Hero | Certificate of Completion
+            <li className="">
+              <ul>
+                Completed the comprehensive Complete Web Development course on Programming Hero.
+              </ul>
+              <ul>
+                Acquired hands-on experience with cutting-edge technologies, including React.js, MongoDB, Express.js, and Tailwind CSS.
+              </ul>
+            </li>
+            </div>
           </div>
           <hr />
         </li>
