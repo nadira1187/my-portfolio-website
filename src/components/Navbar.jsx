@@ -8,9 +8,9 @@ const links = (
       to="/"
       className={({ isActive, isPending }) =>
         isPending
-          ? "text-sm font-medium transition-colors hover:text-blue-500"
+          ? "text-sm font-medium transition-colors hover:text-red-600"
           : isActive
-          ? "text-blue-500"
+          ? "text-red-600"
           : "text-gray-600"
       }
     >
@@ -20,9 +20,9 @@ const links = (
       to="/projects"
       className={({ isActive, isPending }) =>
         isPending
-          ? "text-sm font-medium transition-colors hover:text-blue-500"
+          ? "text-sm font-medium transition-colors hover:text-red-600"
           : isActive
-          ? "text-blue-500"
+          ? "text-red-600"
           : "text-gray-600"
       }
     >
@@ -31,7 +31,11 @@ const links = (
     <NavLink
       to="/contact"
       className={({ isActive, isPending }) =>
-        isPending ? "pending" : isActive ? "text-[#e5a153] font-bold underline" : "text-gray-600"
+        isPending
+          ? "text-sm font-medium transition-colors hover:text-red-600"
+          : isActive
+          ? "text-red-600"
+          : "text-gray-600"
       }
     >
       Contact
@@ -56,7 +60,11 @@ const Navbar = () => {
       <div className="navbar max-w-screen-lg mx-auto mt-5 flex items-center justify-between px-4">
         {/* Brand Name - Should Not Take Extra Space */}
         <div className="flex items-center">
-          <a className="text-blue-950 text-2xl md:text-3xl font-bold whitespace-nowrap">
+        <a
+            className={`text-2xl md:text-3xl font-bold whitespace-nowrap ${
+              theme === "dark" ? "text-gray-300" : "text-blue-950"
+            }`}
+          >
             JK | Nadira
           </a>
         </div>

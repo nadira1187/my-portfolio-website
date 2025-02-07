@@ -22,22 +22,22 @@ const Contact = () => {
         <div className="overflow-hidden bg-gray-50 dark:bg-gray-900 py-12 px-4 md:px-8">
             <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Get in Touch</h2>
-                <p className="text-gray-600 dark:text-gray-300 mt-2">Feel free to reach out to me for any queries or collaborations.</p>
+                <p className="text-red-500 dark:text-gray-300 mt-2">Feel free to reach out to me for any queries or collaborations.</p>
             </div>
 
             <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 <div className="flex flex-col gap-4">
                     <div className="flex items-center gap-4 p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
-                        <FaPhoneAlt className="text-blue-600 text-2xl" />
+                        <FaPhoneAlt className="text-red-500 text-2xl" />
                         <span className="text-gray-700 dark:text-gray-200">+8801953796281</span>
                     </div>
                     <div className="flex items-center gap-4 p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
-                        <FaEnvelope className="text-blue-600 text-2xl" />
+                        <FaEnvelope className="text-red-500 text-2xl" />
                         <span className="text-gray-700 dark:text-gray-200">jknadira2011@gmail.com</span>
                     </div>
                     <div className="flex items-center gap-4 p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
-                        <FaLinkedin className="text-blue-600 text-2xl" />
-                        <a href="https://www.linkedin.com/in/nadira-ohi1187/" className="text-blue-500 hover:underline">nadira-ohi1187</a>
+                        <FaLinkedin className="text-red-500 text-2xl" />
+                        <a href="https://www.linkedin.com/in/nadira-ohi1187/" className="text-grey-500 hover:underline">nadira-ohi1187</a>
                     </div>
                 </div>
                 
@@ -51,7 +51,7 @@ const Contact = () => {
                     <div className="mb-4">
                         <textarea name="message" placeholder="Your Message" rows="4" className="input input-bordered w-full p-2 rounded-md border-gray-300 focus:border-blue-500" required></textarea>
                     </div>
-                    <button type="submit" className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700">Send Message</button>
+                    <button type="submit" className="w-full py-2 px-4 bg-red-600 text-white font-semibold rounded-md hover:bg-blue-700">Send Message</button>
                 </form>
             </div>
         </div>

@@ -15,8 +15,8 @@ const skills = [
 const Skills = () => {
   return (
     <div className="mt-10 flex flex-col items-center">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-3 text-blue-950">Professional Skills</h2>
-      <p className="text-center mb-5 text-blue-950">This section highlights my key professional skills and areas of expertise developed through experience and education.</p>
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-3 ">Professional Skills</h2>
+      <p className="text-center mb-5 text-red-500">This section highlights my key professional skills and areas of expertise developed through experience and education.</p>
 
       {/* Grid Layout */}
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -25,12 +25,12 @@ const Skills = () => {
             key={index}
             whileTap={{ scale: 1.1, rotate: 5 }}
             whileHover={{ scale: 1.05 }}
-            className="p-6 w-72 h-40 bg-blue-950 shadow-xl rounded-xl text-white text-center flex flex-col justify-center items-center 
-                       transition-all duration-300 border border-blue-700 hover:shadow-blue-500/50"
+            className="p-6 w-72 h-40 bg-slate-100 shadow-xl rounded-xl  text-center flex flex-col justify-center items-center 
+                       transition-all duration-300 border  hover:shadow-red-500/50"
           >
             <motion.div
               whileHover={{ scale: 1.2, rotate: -10 }}
-              className="text-6xl text-blue-400 mb-3"
+              className="text-6xl text-red-500 mb-3"
             >
               {skill.icon}
             </motion.div>
