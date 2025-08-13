@@ -1,97 +1,174 @@
-import "tailwindcss/tailwind.css";
-import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
+"use client"
 
-const links = (
-  <div className="flex gap-6">
-    <NavLink
-      to="/"
-      className={({ isActive, isPending }) =>
-        isPending
-          ? "text-sm font-medium transition-colors hover:text-red-600"
-          : isActive
-          ? "text-red-600"
-          : "text-gray-600"
-      }
-    >
-      Home
-    </NavLink>
-    <NavLink
-      to="/projects"
-      className={({ isActive, isPending }) =>
-        isPending
-          ? "text-sm font-medium transition-colors hover:text-red-600"
-          : isActive
-          ? "text-red-600"
-          : "text-gray-600"
-      }
-    >
-      Projects
-    </NavLink>
-    <NavLink
-      to="/contact"
-      className={({ isActive, isPending }) =>
-        isPending
-          ? "text-sm font-medium transition-colors hover:text-red-600"
-          : isActive
-          ? "text-red-600"
-          : "text-gray-600"
-      }
-    >
-      Contact
-    </NavLink>
-  </div>
-);
+import { useState, useEffect } from "react"
+import { Link, useLocation } from "react-router-dom"
+import { motion, AnimatePresence } from "framer-motion"
+import { FiMenu, FiX } from "react-icons/fi"
+import "tailwindcss/tailwind.css"
 
-const Navbar = () => {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-
-  const handleToggle = (e) => {
-    setTheme(e.target.checked ? "dark" : "light");
-  };
+export default function Navbar() {
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light")
+  const [scrolled, setScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
-    localStorage.setItem("theme", theme);
-    document.querySelector("html").setAttribute("data-theme", theme);
-  }, [theme]);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const handleToggle = (e) => {
+    setTheme(e.target.checked ? "dark" : "light")
+    localStorage.setItem("theme", e.target.checked ? "dark" : "light")
+    document.querySelector("html").setAttribute("data-theme", e.target.checked ? "dark" : "light")
+  }
+
+  const navItems = [
+    { name: "Home", path: "/" },
+    { name: "Projects", path: "/projects" },
+    { name: "Contact", path: "/contact" },
+  ]
+
+  const isActiveRoute = (path) => {
+    return location.pathname === path
+  }
 
   return (
-    <div className="overflow-x-hidden ">
-      <div className="navbar max-w-screen-lg mx-auto mt-5 flex items-center justify-between px-4">
-        {/* Brand Name - Should Not Take Extra Space */}
-        <div className="flex items-center">
-        <a
-            className={`text-2xl md:text-3xl font-bold whitespace-nowrap ${
-              theme === "dark" ? "text-gray-300" : "text-blue-950"
-            }`}
-          >
-            JK | Nadira
-          </a>
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? "glass backdrop-blur-xl shadow-2xl border-b border-white/20" : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          {/* Enhanced Logo */}
+          <motion.div whileHover={{ scale: 1.05 }} className="relative">
+            <Link to="/" className="block">
+              <div className="text-3xl md:text-4xl font-serif font-bold bg-gradient-to-r from-red-600 via-pink-600 to-red-700 bg-clip-text text-transparent">
+                JK | Nadira
+              </div>
+              <motion.div
+                className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-red-600 to-pink-600"
+                initial={{ width: 0 }}
+                whileHover={{ width: "100%" }}
+                transition={{ duration: 0.3 }}
+              />
+            </Link>
+          </motion.div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.map((item, index) => (
+              <motion.div
+                key={item.name}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="relative"
+              >
+                <Link
+                  to={item.path}
+                  className={`relative font-semibold transition-colors duration-300 group px-4 py-2 ${
+                    isActiveRoute(item.path) ? "text-red-600" : "text-gray-700 hover:text-red-600"
+                  }`}
+                >
+                  {item.name}
+                  <motion.span
+                    className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-red-600 to-pink-600"
+                    initial={{ width: isActiveRoute(item.path) ? "100%" : 0 }}
+                    whileHover={{ width: "100%" }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Right Side Controls */}
+          <div className="flex items-center gap-4">
+            {/* Enhanced Theme Toggle */}
+            <motion.label whileHover={{ scale: 1.1 }} className="relative inline-flex items-center cursor-pointer">
+              <input type="checkbox" onChange={handleToggle} checked={theme === "dark"} className="sr-only peer" />
+              <div className="w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-red-300/50 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-6 after:w-6 after:transition-all after:shadow-lg peer-checked:bg-gradient-to-r peer-checked:from-red-600 peer-checked:to-pink-600"></div>
+            </motion.label>
+
+            {/* Mobile Menu Button */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 text-gray-700 hover:text-red-600 transition-colors"
+            >
+              <AnimatePresence mode="wait">
+                {mobileMenuOpen ? (
+                  <motion.div
+                    key="close"
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <FiX className="w-6 h-6" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="menu"
+                    initial={{ rotate: 90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: -90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <FiMenu className="w-6 h-6" />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.button>
+          </div>
         </div>
 
-        {/* Navbar Links */}
-        <div className="hidden md:flex">{links}</div>
-
-        {/* Theme Toggle */}
-        <div className="flex items-center gap-4">
-          <label className="swap swap-rotate">
-            <input type="checkbox" onChange={handleToggle} checked={theme === "dark"} />
-            {/* Sun Icon */}
-            <svg className="swap-on fill-current w-6 h-6 md:w-8 md:h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
-            </svg>
-            {/* Moon Icon */}
-            <svg className="swap-off fill-current w-6 h-6 md:w-8 md:h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
-            </svg>
-          </label>
-        </div>
+        {/* Enhanced Mobile Menu */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden mt-4 overflow-hidden"
+            >
+              <div className="glass rounded-2xl p-6 space-y-4">
+                {navItems.map((item, index) => (
+                  <motion.div
+                    key={item.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <Link
+                      to={item.path}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`block font-semibold transition-colors duration-300 py-2 px-4 rounded-lg ${
+                        isActiveRoute(item.path)
+                          ? "text-red-600 bg-red-50"
+                          : "text-gray-700 hover:text-red-600 hover:bg-red-50"
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-
-      {/* Mobile Menu */}
-      <div className="md:hidden mt-3 flex justify-center">{links}</div>
-    </div>
-  );
-};
-
-export default Navbar;
+    </motion.nav>
+  )
+}
